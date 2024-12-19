@@ -3,48 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Customize Your Cup</title>
-  <style>
-    .color-options {
-      display: flex;
-      justify-content: center;
-      margin-top: 20px;
-    }
-    .color-options button {
-      width: 40px;
-      height: 40px;
-      margin: 5px;
-      border: none;
-      border-radius: 50%;
-      cursor: pointer;
-    }
-    #cup {
-      display: block;
-      margin: 0 auto;
-      width: 200px;
-      height: 300px;
-      background-color: white;
-    }
-  </style>
+  <title>Create Your Own Makeup Organizer</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1 style="text-align: center;">Preview Your Cup</h1>
-  <div>
-    <div id="cup"></div>
-    <div class="color-options">
-      <button onclick="changeColor('red')" style="background-color: red;"></button>
-      <button onclick="changeColor('white')" style="background-color: white;"></button>
-      <button onclick="changeColor('yellow')" style="background-color: yellow;"></button>
-      <button onclick="changeColor('blue')" style="background-color: blue;"></button>
-      <button onclick="changeColor('brown')" style="background-color: brown;"></button>
-      <button onclick="changeColor('green')" style="background-color: green;"></button>
-    </div>
-  </div>
+  <header>
+    <h1>Create Your Own Makeup Organizer</h1>
+  </header>
 
-  <script>
-    function changeColor(color) {
-      document.getElementById('cup').style.backgroundColor = color;
-    }
-  </script>
+  <main>
+    <div class="button-container">
+      <button id="bagsBtn" class="main-button">Your Bags</button>
+      <button id="dressersBtn" class="main-button">Your Dressers</button>
+    </div>
+
+    <div id="dresserOptions" class="hidden">
+      <button id="mirrorDresserBtn" class="sub-button">Dresser with Mirrors</button>
+      <button id="noMirrorDresserBtn" class="sub-button">Dresser without Mirrors</button>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2024 Makeup Organizer Creator</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
