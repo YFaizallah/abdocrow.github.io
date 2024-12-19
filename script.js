@@ -29,31 +29,19 @@ let currentIndex = 0;
 
 // Function to reset carousel and hide it
 function resetCarousel() {
+  console.log('Resetting carousel');
   currentImages = [];
   currentIndex = 0;
   carousel.classList.add('hidden');
 }
 
-// Show Bag options
-bagsBtn.addEventListener('click', () => {
-  bagOptions.classList.remove('hidden');
-  dresserOptions.classList.add('hidden');
-  resetCarousel(); // Ensure the carousel is hidden
-});
-
-// Show Dresser options
-dressersBtn.addEventListener('click', () => {
-  dresserOptions.classList.remove('hidden');
-  bagOptions.classList.add('hidden');
-  resetCarousel(); // Ensure the carousel is hidden
-});
-
 // Show the carousel and load images
 function showCarousel(category, type) {
+  console.log(`Showing carousel for category: ${category}, type: ${type}`);
   currentImages = images[category][type];
   currentIndex = 0;
   updateCarouselImage();
-  carousel.classList.remove('hidden'); // Only show the carousel after an option is selected
+  carousel.classList.remove('hidden');
 }
 
 // Update the carousel image
@@ -72,7 +60,13 @@ nextBtn.addEventListener('click', () => {
   updateCarouselImage();
 });
 
-// Event Listeners for Bag options
+// Event Listeners for Bags
+bagsBtn.addEventListener('click', () => {
+  bagOptions.classList.remove('hidden');
+  dresserOptions.classList.add('hidden');
+  resetCarousel();
+});
+
 withBagsBtn.addEventListener('click', () => {
   showCarousel('bag', 'with');
 });
@@ -81,7 +75,13 @@ withoutBagsBtn.addEventListener('click', () => {
   showCarousel('bag', 'without');
 });
 
-// Event Listeners for Dresser options
+// Event Listeners for Dressers
+dressersBtn.addEventListener('click', () => {
+  dresserOptions.classList.remove('hidden');
+  bagOptions.classList.add('hidden');
+  resetCarousel();
+});
+
 mirrorDresserBtn.addEventListener('click', () => {
   showCarousel('dresser', 'with');
 });
@@ -89,3 +89,6 @@ mirrorDresserBtn.addEventListener('click', () => {
 noMirrorDresserBtn.addEventListener('click', () => {
   showCarousel('dresser', 'without');
 });
+
+// Ensure carousel is hidden on page load
+document.addEventListener('DOMContentLoaded', resetCarousel);
