@@ -34,12 +34,26 @@ function resetCarousel() {
   carousel.classList.add('hidden');
 }
 
-// Show the carousel
+// Show Bag options
+bagsBtn.addEventListener('click', () => {
+  bagOptions.classList.remove('hidden');
+  dresserOptions.classList.add('hidden');
+  resetCarousel(); // Ensure the carousel is hidden
+});
+
+// Show Dresser options
+dressersBtn.addEventListener('click', () => {
+  dresserOptions.classList.remove('hidden');
+  bagOptions.classList.add('hidden');
+  resetCarousel(); // Ensure the carousel is hidden
+});
+
+// Show the carousel and load images
 function showCarousel(category, type) {
   currentImages = images[category][type];
   currentIndex = 0;
   updateCarouselImage();
-  carousel.classList.remove('hidden');
+  carousel.classList.remove('hidden'); // Only show the carousel after an option is selected
 }
 
 // Update the carousel image
@@ -58,13 +72,7 @@ nextBtn.addEventListener('click', () => {
   updateCarouselImage();
 });
 
-// Event Listeners for Bags
-bagsBtn.addEventListener('click', () => {
-  bagOptions.classList.remove('hidden');
-  dresserOptions.classList.add('hidden');
-  resetCarousel(); // Hide carousel when switching categories
-});
-
+// Event Listeners for Bag options
 withBagsBtn.addEventListener('click', () => {
   showCarousel('bag', 'with');
 });
@@ -73,13 +81,7 @@ withoutBagsBtn.addEventListener('click', () => {
   showCarousel('bag', 'without');
 });
 
-// Event Listeners for Dressers
-dressersBtn.addEventListener('click', () => {
-  dresserOptions.classList.remove('hidden');
-  bagOptions.classList.add('hidden');
-  resetCarousel(); // Hide carousel when switching categories
-});
-
+// Event Listeners for Dresser options
 mirrorDresserBtn.addEventListener('click', () => {
   showCarousel('dresser', 'with');
 });
