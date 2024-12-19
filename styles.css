@@ -47,3 +47,33 @@ footer {
   color: #6c757d;
   font-size: 14px;
 }
+
+#carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.carousel-button {
+  background-color: #ff66b2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  margin: 0 10px;
+}
+
+.carousel-button:hover {
+  background-color: #e0559c;
+}
+
+#carouselImage {
+  width: 400px;
+  height: auto;
+  border: 5px solid #ff99cc;
+  border-radius: 10px;
+}
+
