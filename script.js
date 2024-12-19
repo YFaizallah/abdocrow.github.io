@@ -7,6 +7,7 @@ const withBagsBtn = document.getElementById('withBagsBtn');
 const withoutBagsBtn = document.getElementById('withoutBagsBtn');
 const mirrorDresserBtn = document.getElementById('mirrorDresserBtn');
 const noMirrorDresserBtn = document.getElementById('noMirrorDresserBtn');
+const carouselContainer = document.getElementById('hide');
 const carousel = document.getElementById('carousel');
 const carouselImage = document.getElementById('carouselImage');
 const prevBtn = document.getElementById('prevBtn');
@@ -29,10 +30,9 @@ let currentIndex = 0;
 
 // Function to reset carousel and hide it
 function resetCarousel() {
-  console.log('Resetting carousel');
   currentImages = [];
   currentIndex = 0;
-  carousel.classList.add('hidden');
+  carouselContainer.classList.add('hidden'); // Hide the carousel container
 }
 
 // Show the carousel and load images
@@ -41,7 +41,7 @@ function showCarousel(category, type) {
   currentImages = images[category][type];
   currentIndex = 0;
   updateCarouselImage();
-  carousel.classList.remove('hidden');
+  carouselContainer.classList.remove('hidden'); // Show the carousel container
 }
 
 // Update the carousel image
