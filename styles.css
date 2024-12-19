@@ -1,43 +1,49 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    background-color: #f8f9fa;
-  }
-  
-  header {
-    background-color: #007bff;
-    color: white;
-    padding: 20px;
-  }
-  
-  h1 {
-    margin: 0;
-  }
-  
-  .main-button, .sub-button {
-    background-color: #007bff;
-    color: white;
-    padding: 15px 30px;
-    border: none;
-    margin: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-  }
-  
-  .main-button:hover, .sub-button:hover {
-    background-color: #0056b3;
-  }
-  
-  .hidden {
-    display: none;
-  }
-  
-  footer {
-    margin-top: 20px;
-    color: #6c757d;
-    font-size: 14px;
-  }
-  
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background-color: #ffe6f2; /* Light pink background */
+}
+
+header {
+  background-color: #ff99cc; /* Pink header */
+  color: white;
+  padding: 20px;
+}
+
+h1 {
+  margin: 0;
+}
+
+.main-button, .sub-button {
+  background-color: #ff66b2; /* Pink button */
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  margin: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.main-button:hover, .sub-button:hover {
+  background-color: #e0559c; /* Darker pink on hover */
+}
+
+.hidden {
+  display: none;
+}
+
+#imageDisplay img {
+  margin-top: 20px;
+  width: 300px;
+  border: 5px solid #ff99cc;
+  border-radius: 10px;
+}
+
+footer {
+  margin-top: 20px;
+  color: #6c757d;
+  font-size: 14px;
+}
